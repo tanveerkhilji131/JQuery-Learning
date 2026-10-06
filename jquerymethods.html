@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ methods</title>
+</head>
+<body>
+    <input type="password" >
+    <button id="show">show</button>
+   <button id="html">html</button>
+   <button id="text"> Text</button>
+   <div>
+    <h2>welcome to you</h2>
+   </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // .html() return a html tag
+    $("#html").click(function () {
+        let div = $("div").html();
+        console.log(div);
+    }) // output =       <h2>welcome to you</h2>
+
+    //.text() return a text content 
+    $("#text").click(function () {
+        let div = $("div").text();
+        console.log(div);
+    }) // output =       welcome to you
+    $("#show").click(function () {
+        $("input").attr("type","text");
+    })
+    
+</script>
+</html>

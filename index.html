@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <button id="slideup">slideUP</button>
+    <button id="slidedown">slidedown</button>
+    <button id="slidetoggle">slidetoggle</button>
+    <button id="fadeout">fadeout</button>
+    <button id="fadein">fadein</button>
+    <button id="fadeToggle">fadeToggle</button>
+    <button id="parent">parent</button>
+    <button id="sibling">sibling</button>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ad quibusdam eum vel molestiae magni consequuntur mollitia et, perferendis ipsa optio nulla quam placeat debitis quasi maxime saepe. Facilis, ipsum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis nostrum unde exercitationem dolores dolor atque, excepturi qui quidem. Minus delectus perspiciatis adipisci totam explicabo quisquam quidem voluptas, tempore eum debitis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi maiores quae quasi, tenetur, exercitationem dolor velit expedita consequatur, error reprehenderit nam officia a perspiciatis distinctio architecto magnam maxime! Sed, molestiae? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, sequi magni nam veniam ratione laudantium iste, culpa mollitia illo vitae ipsam, eaque qui ipsum iure sint sapiente blanditiis aliquid explicabo.</p>
+</body>
+<script>
+    $("#hide").click(function () {
+        $("p").hide(2000)
+    })  //hide
+    $("#show").click(function () {
+        $("p").show(2000)
+    }) //show
+    $("#toggle").click(function () {
+        $("p").toggle()
+    })
+    $('#slideup').click(function () {
+        $("p").slideUp()
+    })
+    $("#slidedown").click(function (){
+        $("p").slideDown()
+    })
+    $("#slidetoggle").click(function () {
+        $("p").slideToggle()
+    })
+    $("#fadeout").click(function () {
+        $("p").fadeOut()
+    })
+    $("#fadein").click(function () {
+        $("p").fadeIn()
+    })
+    $("#fadeToggle").click(function () {
+        $("p").fadeToggle()
+    })
+    // parent toggle 
+    $("#parent").click(function () {
+        $("p").parents().slideToggle()
+    }) 
+    // sibiling toggle
+  
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen" />
+
+    <title>lightBox</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header{
+            width: 1320px;
+            margin: auto;
+        }
+        header ul{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            margin: 1rem;
+        }
+        header ul li {
+            list-style: none;
+            margin: 1rem;
+            width: 200px;
+        }
+        ul li a img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <ul id="imgheader">
+         <li class="gallery"><a href="assets/1main.jpeg"><img src="assets/1main.jpeg" alt=""></a></li>
+         <li class="gallery"><a href="assets/about.jpeg"><img src="assets/about.jpeg" alt=""></a></li>
+         <li class="gallery"><a href="assets/LOgo.jpeg"><img src="assets/LOgo.jpeg" alt=""></a></li>
+         <li class="gallery"><a href="assets/main.jpg"><img src="assets/main.jpg" alt=""></a></li>
+         </ul>
+    </header>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script>
+   $(document).ready(function() {
+  // add all to same gallery
+  $(".gallery a").attr("data-fancybox","mygallery");
+  // assign captions and title from alt-attributes of images:
+  $(".gallery a").each(function(){
+    $(this).attr("data-caption", $(this).find("img").attr("alt"));
+    $(this).attr("title", $(this).find("img").attr("alt"));
+  });
+  // start fancybox:
+	$(".gallery a").fancybox();
+});
+
+    </script>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+<style>
+    body {
+  background: #f0f0f0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-container {
+    position: absolute;
+    top: 5%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#todo-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 20px;
+
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+
+#todo-list li.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+button.delete {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.maintodo{
+    display: grid;
+   grid-template-columns: 3fr 1fr;
+}
+.maintodo button{
+    height:2.5rem;
+}
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   box-shadow: 0 12px 12px #302b2b;
+   background-color: #af9b9b;
+   border-radius: 10px;
+   padding: 0 1rem;
+   margin: 1rem 0;
+}
+.todo span{
+    background-color: red;
+    color: white;
+    padding: 0.5rem 0.9rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+  <div class="todo-container">
+    <h1>To-Do List</h1>
+    <div class="maintodo">
+        <input type="text" id="todo-input" id="input" placeholder="Type and press Enter..." >
+        <button>click</button>
+    
+    </div>
+   
+
+        <div class="storetodo">
+        
+      
+  
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+<script>
+    $("button").click(function (){
+        
+        
+        let div = $("input").val();
+        $(".storetodo").prepend("  <div class='todo'>    <ul>"+div+"</ul> <span class='span'>X</span>   </div>")
+       
+        $(".span").click(function () {
+        let a  = $(this).parent().remove();        
+        
+    })
+    
+
+    })
+   
+    
+    
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style</title>
+   <style>
+     .screen{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        top: 0px;
+        /* left: 0px; */
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+    .main{
+        position: relative;
+    }
+   </style>
+</head>
+<body>
+    <div class="screen">
+        <img src="https://art.pixilart.com/ca55d1f91b2cb0d.gif" >
+    </div>
+    <button id="Append">Append</button>
+    <button id="prepend">prepend</button>
+    <button id="after">after</button>
+    <button id="before">before</button>
+    <button id="remove">remove</button>
+    <button id="empty">empty</button>
+    <button id="animate">animate</button>
+
+    <div class="main">
+        <h2>hello gys</h2>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+<script>
+    // main div push h2 tag +content
+    $("#Append").click(function () {
+        $(".main").append("<h2>hello boys</h2>")
+    })
+    // main div prepend h2 tag + content 
+    $("#prepend").click(function () {
+        $(".main").prepend("<h2>hello boys</h2>")
+    })
+    // main div ready hone ka baad matleb bhare add hoga
+    $("#after").click(function () {
+        $(".main").after("<p>after</p>")
+    })
+    // main div ready hone ka pahle matleb bhare  or pahele add hoga
+
+    $("#before").click(function () {
+        $(".main").before("<p>before</p>")
+    })
+    // .remove method remove main div 
+    $("#remove").click(function () {
+        $(".main").remove()
+    })
+    // main div inside remove all elements and convrt to empty
+    $("#empty").click(function () {
+        $(".main").empty()
+    })
+    // website add  loding icon 
+    $(window).on("load",function () {
+        $(".screen").css("display","none");
+    })
+    //  animaltion called make a animation 
+    $("#animate").click(function (){
+        $(".main").animate({
+            left:"300px",
+            top:"0px"
+        },3000)
+        $(".main").animate({
+            left:"300px",
+            top:"300px"
+        },3000)
+    })
+</script>
+</html>

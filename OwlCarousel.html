@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen" />
+
+    <title>own carousel</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .item img{
+            /* width: 100px; */
+            height: 200px;
+        }
+        .owl-prev span{
+            position: absolute;
+            left: 0;
+            top:22%;
+            font-size: 4rem;
+            color: black;
+        }
+        .owl-next span{
+            position: absolute;
+            right: 0;
+            top:22%;
+            font-size: 4rem;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <a href="assets/1main.jpeg"> <img src="assets/1main.jpeg" alt="">
+            </a>
+        </div>
+        <div class="item">
+            <a href="assets/about.jpeg"><img src="assets/about.jpeg" alt=""></a>
+        </div>
+      
+        <div class="item">
+            <a href="assets/LOgo.jpeg">         <img src="assets/LOgo.jpeg" alt="">
+            </a>
+        </div>
+        <div class="item">
+            <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+        </div>
+        <div class="item">
+            <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+            </div>
+                <div class="item">
+                    <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+
+                    </div>
+                    <div class="item">
+                        <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+
+                        </div>
+                        <div class="item">
+                            <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+
+                            </div>
+                            <div class="item">
+                                <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+
+                                </div>
+                                <div class="item">
+                                    <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+
+                                    </div>
+                                    <div class="item">
+                                        <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+
+                                        </div>
+                                        <div class="item">
+                                            <a href="assets/main.jpg">  <img src="assets/main.jpg" alt=""></a>
+
+                                            </div>
+      </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<script>
+    $(function() {
+  // Owl Carousel
+  var owl = $(".owl-carousel");
+  owl.owlCarousel({
+    
+    animateOut: 'fadeOut',
+      animateIn: 'flipInX',
+    //   items:1,
+      margin:30,
+      stagePadding:30,
+      smartSpeed:450,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true,
+      loop: true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:4,
+            nav:true,
+            loop:true
+        }
+    }
+  });
+});
+
+
+$(document).ready(function() {
+  // add all to same gallery
+  $(".item a").attr("data-fancybox","mygallery");
+  // assign captions and title from alt-attributes of images:
+  $(".item a").each(function(){
+    $(this).attr("data-caption", $(this).find("img").attr("alt"));
+    $(this).attr("title", $(this).find("img").attr("alt"));
+  });
+  // start fancybox:
+	$(".item a").fancybox();
+});
+
+</script>
+</html>
